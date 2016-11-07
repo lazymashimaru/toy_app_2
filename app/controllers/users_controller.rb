@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    @microposts = User.micrposts.first
   end
 
   # GET /users/1
