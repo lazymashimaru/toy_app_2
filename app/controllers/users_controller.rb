@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
-    @microposts = User.microposts.first
+    @microposts = Micropost.joins('left outer join users u on microposts.user_id = u.id')
   end
 
   # GET /users/1
